@@ -17,14 +17,69 @@ git config --list
 4. 配置公钥（这里自己上网查资料配置）
 ### 拉取远程仓库代码和将文件上传到远程仓库
 #### 拉取远程仓库代码
-1. 
-2. 
-3. 
-4. 
-5. 
+1. 使用如下指令进行远程仓库代码的拉取：
+```
+sudo git clone https://github.com/TJTao/git-test
 
+成功终端输出如下：
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 10 (delta 0), reused 7 (delta 0), pack-reused 0
+展开对象中: 100% (10/10), 1.18 KiB | 1.18 MiB/s, 完成.
+```
+### 将文件上传到远程仓库
+1. 使用指令mkdir leaning创建一个目录,并进入该目录下,再使用如下指令初始化一个git仓库：
+```
+git init
+```
+2. 在当前目录下创建一个文件,并且放入内容，之后使用如下指令添加文件：
+```
+git add .
+```
+3. 使用如下指令提交文件
+```
+git commit -m "第一次提交"(双引号里面的内容写文档的注释)
+```
+4. 使用如下指令查看历史提交记录
+```
+git log
+```
+5. 使用如下指令进行远程仓库操作
+```
+git remote add origin https://github.com/TJTao/TJTao(git remote操作)
+```
+6. 使用如下指令上传远程代码并合并
+```
+git push origin master(git push操作)
 
-
+成功终端输出结果如下：
+Username for 'https://github.com': TJTao
+Password for 'https://TJTao@github.com': 
+枚举对象中: 4, 完成.
+对象计数中: 100% (4/4), 完成.
+使用 4 个线程进行压缩
+压缩对象中: 100% (3/3), 完成.
+写入对象中: 100% (3/3), 1.23 KiB | 1.23 MiB/s, 完成.
+总共 3 （差异 0），复用 0 （差异 0）
+To https://github.com/TJTao/TJTao
+   bf0c75e..7905d38  master -> master
+```
+#### 第6步可能出现的问题
+##### 1.error: failed to push some refs to 'https://github.com/TJTao/git-test'
+##### 解决方法，将远程和本地仓库合并就可以了
+```
+git pull --rebase origin master
+```
+##### 2.fatal: remote origin already exists.
+##### 解决方法
+```
+git remote rm origin
+```
+##### 3.在执行第6步之后会有输入远程仓库名和密码的操作，输入密码不会上传成功，解决方法参照以下网址：
+```
+https://shliang.blog.csdn.net/article/details/119698015?spm=1001.2014.3001.5506
+```
 ## GIT分支管理
 ### 概念
 1. git所有分支之间彼此互不干扰，各自完成各自的工作和内容。可以在分支使用完之后合并到总分支上，安全、便捷、不影响其他分支工作
