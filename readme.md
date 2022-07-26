@@ -159,7 +159,6 @@ git checkout dev
 已删除分支 dev（曾为 bf0c75e）。
 ```
 #### 我是dev分支下修改的内容
-#### 我是dev分支下修改的内容
 
 
 
