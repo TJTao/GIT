@@ -52,6 +52,7 @@ git remote add origin https://github.com/TJTao/TJTao(git remote操作)
 6. 使用如下指令上传远程代码并合并
 ```
 git push origin master(git push操作)
+密码部分输入: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(注意这是我自己，自己参照下面出现问题的问题3来获取这条信息）
 
 成功终端输出结果如下：
 Username for 'https://github.com': TJTao
@@ -157,7 +158,17 @@ git checkout dev
 ```
 已删除分支 dev（曾为 bf0c75e）。
 ```
-### 分支管理应用
+
+
+
+
+
+
+
+
+
+
+
 
 
 
