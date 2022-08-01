@@ -75,7 +75,7 @@ git pull --rebase origin master
 ##### 2.fatal: remote origin already exists.
 ##### 解决方法
 ```
-git remote rm origin
+//git remote rm origin
 ```
 ##### 3.在执行第6步之后会有输入远程仓库名和密码的操作，输入密码不会上传成功，解决方法参照以下链接内容：
 [CSDN](https://shliang.blog.csdn.net/article/details/119698015?spm=1001.2014.3001.5506)
