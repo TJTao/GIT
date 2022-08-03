@@ -221,3 +221,79 @@ git commit(就可以看到冲突已经解决)
 cat readme.md(查看文件里面的内容，可以看到分支dev和分支master的内容已经合并)
 ```
 
+## 常用命令
+【命令】
+|命令|描述
+--- | ---
+git fetch | 用于从远程仓库获取代码库
+git pull | 命令用于从远程获取代码并合并本地的版本
+
+1. git fetch
+【详细描述】
+```
+假设你已经配置好了一个远程仓库，并且你想要提取更新的数据，就可以使用这个命令:
+$ git fetch [alias]
+以上命令告诉Git去获取远程仓库有但是我没有的数据，然后可以执行:
+$ git merge [alias]/[branch]
+以上命令将远程仓库上的任何更新合并到你的当前分支
+```
+【具体用法】假设远程仓库已经有人更新了新的内容(基于我自己的仓库)
+```
+$ cd git-test
+$ git fetch origin
+终端输出:
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+展开对象中: 100% (3/3), 860 字节 | 860.00 KiB/s, 完成.
+来自 https://github.com/TJTao/GIT
+   91970a5..eaae3d2  master     -> origin/master
+$ git merge origin/master
+终端输出：
+更新 91970a5..eaae3d2
+Fast-forward
+ readme.md | 74 +++++++++++++++++++++++++++++++++++---------------------------------------
+ 1 file changed, 35 insertions(+), 39 deletions(-)
+$ gedit readme.md
+查看更新过的内容
+```
+
+2. git pull
+【详细描述】
+```
+git pull 其实就是 git fetch 和git merge FETCH_HEAD的简写
+```
+【命令格式】
+```
+git pull <远程主句名><远程分支名>:<本地分支名>
+```
+【实例操作】
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
