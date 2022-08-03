@@ -14,7 +14,24 @@ git config --global user.email "youremail@domain.com"
 ```
 git config --list
 ```
-4. 配置公钥（这里自己上网查资料配置）
+4. 配置公钥
+```
+buntu配置:
+$ ssh-keygen -t rsa -C "youremail@domain.com"
+$ cd ~/.ssh
+$ ls
+id_rsa  id_rsa.pub  known_hosts
+(此时就可以看到后缀为.pub结尾的文件就是公钥)
+$ gedit id_dsa.pub
+(复制该文件里面的内容)
+
+github配置
+1. Settings
+2. SSH and GPG keys
+3. New SSH key
+4. 标题任意取，把复制的内容加到key里面去
+5. Add SSH key
+```
 ### 拉取远程仓库代码和将文件上传到远程仓库
 #### 拉取远程仓库代码
 1. 使用如下指令进行远程仓库代码的拉取：
@@ -52,7 +69,7 @@ git remote add origin https://github.com/TJTao/TJTao(git remote操作)
 6. 使用如下指令上传远程代码并合并
 ```
 git push origin master(git push操作)
-密码部分输入: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(注意这是我自己，自己参照下面出现问题的问题3来获取这条信息）
+密码部分输入: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(注意这是我自己，自己参照下面出现问题的问题3来获取这条信息）
 
 成功终端输出结果如下：
 Username for 'https://github.com': TJTao
@@ -66,46 +83,24 @@ Password for 'https://TJTao@github.com':
 To https://github.com/TJTao/TJTao
    bf0c75e..7905d38  master -> master
 ```
-#### 第6步可能出现的问题
-##### 1.error: failed to push some refs to 'https://github.com/TJTao/git-test'
-##### 解决方法，将远程和本地仓库合并就可以了
-```
-git pull --rebase origin master
-```
-##### 2.在执行第6步之后会有输入远程仓库名和密码的操作，输入密码不会上传成功，解决方法参照以下链接内容：
-[CSDN](https://shliang.blog.csdn.net/article/details/119698015?spm=1001.2014.3001.5506)
-##### 3.fatal: 'https://github.com/TJTao/GIT/' 鉴权失败
-```
-参照上一步从新获得鉴权信息就可以解决
-```
+#### 可能会出现的问题
+|出现问题|修正方法
+----- | -----
+error: failed to push some refs to 'https://github.com/TJTao/git-test' | git pull --rebase origin master
+fatal: 'https://github.com/TJTao/GIT/' 鉴权失败 | [CSDN](https://shliang.blog.csdn.net/article/details/119698015?spm=1001.2014.3001.5506)
 ## GIT分支管理
 ### 概念
 1. git所有分支之间彼此互不干扰，各自完成各自的工作和内容。可以在分支使用完之后合并到总分支上，安全、便捷、不影响其他分支工作
 ### 分支管理常用命令
-#### 1.查看分支
-```
-git branch
-```
-#### 2.创建分支
-```
-git branch <name>(分支名)
-```
-#### 3.切换分支
-```
-git checkout
-```
-#### 4.创建+切换分支
-```
-git checkout -b <name>(分支名)
-```
-#### 5.合并某分支到当前分支
-```
-git merge <name>(分支名)
-```
-#### 6.删除分支
-```
-git branch -D <name>(要删除的分支名)
-```
+|命令|描述
+----- | -----
+git branch | 查看分支
+git branch <name> | 创建分支
+git checkout <name> | 切换分支
+git checkout -b <name> | 创建+切换分支
+git merge <name> | 合并某分支到当前分支
+git branch -D <name> | 删除分支
+git branch -d <name> | 删除分支
 ### 分支管理操作
 #### 查看分支
 1. 指令
@@ -151,7 +146,7 @@ git checkout dev
 已经是最新的。
 ```
 #### 删除分支
-1. 使用指令git branch -D dev删除dev分支，得到结果如下：
+1. 使用指令git branch -d dev删除dev分支，得到结果如下：
 ```
 已删除分支 dev（曾为 bf0c75e）。
 ```
@@ -225,3 +220,4 @@ git status -s(终端输出结果 M  readme.md)
 git commit(就可以看到冲突已经解决)
 cat readme.md(查看文件里面的内容，可以看到分支dev和分支master的内容已经合并)
 ```
+
