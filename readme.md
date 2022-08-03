@@ -72,14 +72,9 @@ To https://github.com/TJTao/TJTao
 ```
 git pull --rebase origin master
 ```
-##### 2.fatal: remote origin already exists.
-##### 解决方法
-```
-//git remote rm origin
-```
-##### 3.在执行第6步之后会有输入远程仓库名和密码的操作，输入密码不会上传成功，解决方法参照以下链接内容：
+##### 2.在执行第6步之后会有输入远程仓库名和密码的操作，输入密码不会上传成功，解决方法参照以下链接内容：
 [CSDN](https://shliang.blog.csdn.net/article/details/119698015?spm=1001.2014.3001.5506)
-##### 4.fatal: 'https://github.com/TJTao/GIT/' 鉴权失败
+##### 3.fatal: 'https://github.com/TJTao/GIT/' 鉴权失败
 ```
 参照上一步从新获得鉴权信息就可以解决
 ```
