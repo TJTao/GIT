@@ -1,4 +1,4 @@
-# *GIT操作（基于ubuntu，以下操作都是基于我自己的github来操作的）*
+# <h1><center>*GIT操作（基于ubuntu，以下操作都是基于我自己的github来操作的）*</center></h1>
 ## GIT安装与配置
 ### 安装与配置
 1. 安装命令
@@ -268,9 +268,11 @@ git pull 其实就是 git fetch 和git merge FETCH_HEAD的简写
 ```
 git pull <远程主句名><远程分支名>:<本地分支名>
 ```
-【实际操作】
-```
 
+#### Personal access tokens
+【消息更新】
+```
+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
 ```
 
 
